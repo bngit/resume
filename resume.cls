@@ -43,7 +43,7 @@
 \RequirePackage{enumitem}
 \setlist{noitemsep} % removes spacing from items but leaves space around the whole list
 %\setlist{nosep} % removes all vertical spacing within and around the list
-\setlist[itemize]{topsep=0.25em, leftmargin=1.5pc}
+\setlist[itemize]{topsep=0.0em, leftmargin=1.5pc}
 \setlist[enumerate]{topsep=0.25em, leftmargin=1.5pc}
 \RequirePackage[super]{nth}
 
@@ -61,11 +61,21 @@
   {}
 \titlespacing*{\subsection}{0cm}{*1.8}{*0.6}
 
+\titleformat{\subsubsection}
+  {\large\raggedright}
+  {}{0em}
+  {}
+\titlespacing*{\subsubsection}{0cm}{*1.8}{*0.3}
+
 \newcommand{\datedsection}[2]{%
   \section[#1]{#1 \hfill #2}%
 }
 \newcommand{\datedsubsection}[2]{%
   \subsection[#1]{#1 \hfill #2}%
+}
+\newcommand{\datedsubsubsection}[2]{%
+  \vspace{0.2ex}
+  \subsubsection[#1]{#1 \hfill #2}%
 }
 \newcommand{\datedline}[2]{%
   {\par #1 \hfill #2 \par}%
@@ -118,5 +128,5 @@
 
 \newcommand{\role}[2]{
   {\par \textit{#1} ~ #2 \par}
-  \vspace{0.85ex}
+  \vspace{0.2ex}
 }
